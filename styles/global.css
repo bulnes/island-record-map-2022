@@ -1,0 +1,450 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #003a64;
+}
+
+@media screen and (min-width: 576px) {
+  body {
+    background-color: white;
+  }
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .content {
+    background-image: url("../images/bg-sand.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* 
+ * ================= 
+ * mapa mobile
+ * =================
+ */
+
+.mobile-map {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 576px) {
+  .mobile-map {
+    display: none;
+  }
+}
+
+/* 
+ * ================= 
+ * container do mapa
+ * =================
+ */
+
+.container {
+  background-image: url("../images/bg-map.png");
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  margin: 0 auto;
+  position: relative;
+  height: 211px;
+  width: 375px;
+
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    display: block;
+    height: 324px;
+    width: 576px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    height: 432px;
+    width: 768px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    height: 558px;
+    width: 992px;
+  }
+}
+
+/* 
+ * ================= 
+ * título do mapa
+ * =================
+ */
+
+.container__title {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 20%;
+  height: auto;
+
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .container__title {
+    display: inline-block;
+    top: 13%;
+    left: 13%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container__title {
+    top: 15%;
+    left: 15%;
+  }
+}
+
+/* 
+ * ================= 
+ * ícones no mapa
+ * =================
+ */
+
+.position {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 37px;
+  position: absolute;
+}
+
+.tend {
+  background-image: url("../images/bg-tend.png");
+  bottom: 58px;
+  left: 96px;
+}
+.tend:hover,
+.tend:focus {
+  background-image: url("../images/bg-tend-on.png");
+}
+
+.river {
+  background-image: url("../images/bg-river.png");
+  bottom: 108px;
+  left: 263px;
+}
+.river:hover,
+.river:focus {
+  background-image: url("../images/bg-river-on.png");
+}
+
+.stadium {
+  background-image: url("../images/bg-stadium.png");
+  bottom: 95px;
+  left: 170px;
+}
+.stadium:hover,
+.stadium:focus {
+  background-image: url("../images/bg-stadium-on.png");
+}
+
+@media screen and (min-width: 576px) {
+  .tend {
+    bottom: 98px;
+    left: 157px;
+  }
+
+  .river {
+    bottom: 175px;
+    left: 414px;
+  }
+
+  .stadium {
+    bottom: 154px;
+    left: 274px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tend,
+  .river,
+  .stadium {
+    width: 67px;
+    height: 60px;
+  }
+
+  .tend {
+    left: 207px;
+    bottom: 125px;
+  }
+
+  .river {
+    bottom: 227px;
+    left: 549px;
+  }
+
+  .stadium {
+    bottom: 200px;
+    left: 361px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .tend {
+    left: 276px;
+    bottom: 169px;
+  }
+
+  .river {
+    bottom: 301px;
+    left: 717px;
+  }
+
+  .stadium {
+    bottom: 267px;
+    left: 475px;
+  }
+}
+
+/* 
+ * ================= 
+ * balões no mapa
+ * =================
+ */
+.balloon {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: none;
+}
+.position:hover .balloon,
+.position:focus .balloon {
+  display: block;
+}
+
+.balloon::after {
+  position: absolute;
+
+  bottom: 0;
+  right: 0;
+
+  height: 50px;
+  width: 50px;
+
+  background-image: url("../images/play.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.balloon.balloon--tend {
+  background-image: url("../images/balloon-tend.png"),
+    radial-gradient(circle, rgba(9, 9, 121, 1) 10%, rgba(0, 212, 255, 0) 50%);
+}
+.balloon.balloon--stadium {
+  background-image: url("../images/balloon-stadium.png"),
+    radial-gradient(circle, rgba(9, 9, 121, 1) 10%, rgba(0, 212, 255, 0) 50%);
+}
+.balloon.balloon--river {
+  background-image: url("../images/balloon-river.png"),
+    radial-gradient(circle, rgba(9, 9, 121, 1) 10%, rgba(0, 212, 255, 0) 50%);
+}
+
+@media screen and (min-width: 576px) {
+  .balloon.balloon--tend {
+    height: 208px;
+    width: 200px;
+    bottom: 32px;
+    left: -61px;
+  }
+
+  .balloon.balloon--stadium {
+    cursor: auto;
+    height: 149px;
+    width: 226px;
+    bottom: -146px;
+    left: -29px;
+  }
+
+  .balloon.balloon--river {
+    height: 122px;
+    width: 189px;
+    bottom: 30px;
+    left: -78px;
+  }
+
+  .balloon::after {
+    content: "";
+  }
+  .balloon.balloon--tend::after {
+    bottom: 1px;
+    right: -13px;
+  }
+  .balloon.balloon--stadium::after {
+    content: none;
+    bottom: 12px;
+    right: -14px;
+  }
+  .balloon.balloon--river::after {
+    bottom: 0px;
+    right: -15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .balloon::after {
+    height: 100px;
+    width: 100px;
+  }
+
+  .balloon.balloon--tend {
+    height: 251px;
+    width: 241px;
+    bottom: 53px;
+    left: -67px;
+  }
+
+  .balloon.balloon--stadium {
+    height: 173px;
+    width: 261px;
+    bottom: -163px;
+    left: -25px;
+  }
+
+  .balloon.balloon--river {
+    height: 152px;
+    width: 236px;
+    bottom: 53px;
+    left: -92px;
+  }
+
+  .balloon.balloon--tend::after {
+    bottom: -10px;
+    right: -31px;
+  }
+  .balloon.balloon--stadium::after {
+    bottom: 0px;
+    right: -29px;
+  }
+  .balloon.balloon--river::after {
+    bottom: -10px;
+    right: -30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .balloon.balloon--tend {
+    height: 323px;
+    width: 341px;
+    bottom: 55px;
+    left: -109px;
+  }
+
+  .balloon.balloon--stadium {
+    height: 216px;
+    width: 323px;
+    bottom: -208px;
+    left: -39px;
+  }
+
+  .balloon.balloon--river {
+    height: 210px;
+    width: 323px;
+    bottom: 55px;
+    left: -138px;
+  }
+
+  .balloon.balloon--tend::after {
+    bottom: -5px;
+    right: -13px;
+  }
+  .balloon.balloon--stadium::after {
+    bottom: 10px;
+    right: -29px;
+  }
+  .balloon.balloon--river::after {
+    bottom: -3px;
+    right: -29px;
+  }
+}
+
+/* 
+ * ================= 
+ * vídeo comercial
+ * =================
+ */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(31, 31, 31, 0.8);
+  z-index: 2;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.video-container.video-container--visible {
+  display: flex;
+}
+
+.video-container__close {
+  height: 45px;
+  width: 50px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background-color: black;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container__video {
+  width: calc(100vw - 20px);
+  max-width: 800px;
+  height: calc(100vw * 0.5625);
+  max-height: 450px;
+  margin: 0 auto;
+}
