@@ -102,37 +102,6 @@ body {
 
 /* 
  * ================= 
- * título do mapa
- * =================
- */
-
-.container__title {
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  width: 20%;
-  height: auto;
-
-  display: none;
-}
-
-@media screen and (min-width: 576px) {
-  .container__title {
-    display: inline-block;
-    top: 13%;
-    left: 13%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container__title {
-    top: 15%;
-    left: 15%;
-  }
-}
-
-/* 
- * ================= 
  * ícones no mapa
  * =================
  */
@@ -261,7 +230,6 @@ body {
   height: 50px;
   width: 50px;
 
-  background-image: url("../images/play.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

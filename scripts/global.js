@@ -3,30 +3,17 @@ const videoToggles = () => {
   toggles.forEach((toggle) => toggle.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const visibleClass = 'video-container--visible';
-    const $videoContainer = document.querySelector('.video-container');
+    const isTend = e.target.hasAttribute('data-js-video-tend');
+    const isRiver = e.target.hasAttribute('data-js-video-river');
 
-    $videoContainer.classList.toggle(visibleClass);
+    const url = isTend 
+      ? 'https://recordtv.r7.com/ilha-record-2/novidades/fotos/faca-um-tour-pelo-cenario-paradisiaco-de-ilha-record-2-04072022'
+      : isRiver
+      ? 'https://www.r7.com/mapailharecord'
+      : 'https://www.r7.com';
 
-    const $iframe = document.querySelector('.video-container__video');
-    $iframe.removeAttribute('src');
+    window.open(url, '_blank');
   }));
 };
 
-const videoTypes = () => {
-  const types = [...document.querySelectorAll('[data-js-video-type]')];
-  types.forEach((type) => type.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const videoId = e.currentTarget.getAttribute('data-js-video-type');
-    const videoSrc = `https://player.r7.com/video/i/${videoId}?autoPlay=true&full=true`;
-
-    const $iframe = document.querySelector('.video-container__video');
-    $iframe.src = videoSrc;
-  }));
-};
-
-window.addEventListener('load', () => {
-  videoToggles();
-  videoTypes();
-});
+window.addEventListener('load', videoToggles);
