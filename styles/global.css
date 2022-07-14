@@ -12,13 +12,7 @@ body {
 }
 
 body {
-  background-color: #003a64;
-}
-
-@media screen and (min-width: 576px) {
-  body {
-    background-color: white;
-  }
+  background-color: white;
 }
 
 .content {
@@ -119,6 +113,7 @@ body {
   background-image: url("../images/bg-tend.png");
   bottom: 58px;
   left: 96px;
+  cursor: pointer;
 }
 .tend:hover,
 .tend:focus {
@@ -129,6 +124,7 @@ body {
   background-image: url("../images/bg-river.png");
   bottom: 108px;
   left: 263px;
+  cursor: pointer;
 }
 .river:hover,
 .river:focus {
@@ -230,6 +226,7 @@ body {
   height: 50px;
   width: 50px;
 
+  background-image: url("../images/play.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
