@@ -16,4 +16,16 @@ const videoToggles = () => {
   }));
 };
 
+const hudsonClick = () => {
+  const url = 'https://recordtv.r7.com/ilha-record-2/onde-esta-o-hudson?utm_source=ilharecordhudson&utm_medium=ilharecordhudson&utm_id=ilharecordhudson';
+  const hudsons = [...document.querySelectorAll('[data-js-hudon]')];
+  hudsons.forEach(($hudson) => {
+    $hudson.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(url, '_top');
+    });
+  });
+}
+
 window.addEventListener('load', videoToggles);
+window.addEventListener('load', hudsonClick);

@@ -32,6 +32,10 @@ body {
   }
 }
 
+[data-js-hudon] {
+  cursor: pointer;
+}
+
 /* 
  * ================= 
  * mapa mobile
@@ -141,6 +145,17 @@ body {
   background-image: url("../images/bg-stadium-on.png");
 }
 
+.hudson {
+  background-image: url("../images/bg-hudson.png");
+  bottom: 108px;
+  left: 263px;
+  cursor: pointer;
+}
+.hudson:hover,
+.hudson:focus {
+  background-image: url("../images/bg-hudson-on.png");
+}
+
 @media screen and (min-width: 576px) {
   .tend {
     bottom: 98px;
@@ -156,12 +171,18 @@ body {
     bottom: 154px;
     left: 274px;
   }
+
+  .hudson {
+    bottom: 175px;
+    left: 347px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .tend,
   .river,
-  .stadium {
+  .stadium,
+  .hudson {
     width: 67px;
     height: 60px;
   }
@@ -180,6 +201,11 @@ body {
     bottom: 200px;
     left: 361px;
   }
+
+  .hudson {
+    bottom: 230px;
+    left: 458px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -196,6 +222,11 @@ body {
   .stadium {
     bottom: 267px;
     left: 475px;
+  }
+
+  .hudson {
+    bottom: 305px;
+    left: 600px;
   }
 }
 
